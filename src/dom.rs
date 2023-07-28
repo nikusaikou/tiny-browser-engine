@@ -1,6 +1,6 @@
 use std::collections::{HashMap, HashSet};
 
-type AttrMap = HashMap<String, String>;
+pub type AttrMap = HashMap<String, String>;
 
 // DOM 节点
 #[derive(Debug)]
