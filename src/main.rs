@@ -1,6 +1,7 @@
 
 pub mod dom;
 pub mod html_parser;
+pub mod css_parser;
 
 fn main() {
     let html = r#"
@@ -18,12 +19,6 @@ fn main() {
     </html>
     "#;
 
-    let mut parser = html_parser::Parser {
-        pos: 0,
-        input: html.to_string(),
-    };
-
-    for i in 0..10 {
-        println!("idx:{}, char: {}, pos:{}", i, parser.consume_char(), parser.pos);
-    }
+    let parser = html_parser::parse(html.to_string());
+    println!("{:#?}", parser);
 }
